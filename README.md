@@ -1,96 +1,111 @@
 # Movie App
 
-A Vue.js application that displays a list of popular movies fetched from The Movie Database (TMDb) API. Users can generate and view barcodes for movie tickets.
+A Vue.js application that fetches a list of popular movies from an API and displays them in a stylish interface. Users can generate and view a barcode for each movie, which can be scanned as a ticket.
 
 ## Features
 
 - Fetch and display a list of popular movies.
-- Display movie posters, titles, and a button to generate barcodes.
-- Generate barcodes for movie tickets using `jsbarcode`.
+- View movie details including the poster.
+- Generate and display a barcode for each movie.
+
+## Technologies
+
+- **Frontend Framework**: Vue.js
+- **Barcode Generation**: JsBarcode
+- **Styling**: Scoped CSS in Vue components
+
+## API
+
+The application uses the [TMDb API](https://www.themoviedb.org/documentation/api) to fetch movie data.
+
+- **Endpoint**: `https://api.themoviedb.org/3/discover/movie`
+- **Parameters**: 
+  - `include_adult=false`
+  - `include_video=false`
+  - `language=en-US`
+  - `page=1`
+  - `sort_by=popularity.desc`
+- **Bearer Token**: You need to provide your own API token.
 
 ## Setup
 
 ### Prerequisites
 
-- Node.js (v14 or later)
-- npm (v6 or later)
+- Node.js and npm installed. If not, download and install from [nodejs.org](https://nodejs.org/).
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/movie-app.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
+   git clone <repository-url>
    cd movie-app
    ```
 
-3. Install the dependencies:
+2. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-### Configuration
+3. Replace `YOUR_BEARER_TOKEN` in `src/components/MovieList.vue` with your own TMDb API token.
 
-1. Create a `.env` file in the root directory of the project with the following content:
+### Development
 
-   ```env
-   VUE_APP_TMDB_API_KEY=your_api_key_here
-   ```
-
-   Replace `your_api_key_here` with your actual TMDb API key.
-
-### Running the Application
-
-To start the development server, run:
+To start the development server and open the app in your browser:
 
 ```bash
 npm run serve
 ```
 
-Visit `http://localhost:8080` in your browser to view the application.
+Visit `http://localhost:8080` to view the app.
 
-### Building for Production
+### Building
 
-To build the application for production, run:
+To create a production build:
 
 ```bash
 npm run build
 ```
 
-The built files will be available in the `dist` directory.
+The build files will be located in the `dist` directory.
 
 ## Usage
 
-1. **View Movies**: The application fetches and displays a list of popular movies with their posters and titles.
-2. **Generate Barcode**: Click on the "Generate Barcode" button next to a movie to generate and view a barcode for the movie's ID.
+1. **View Movies**: The app will display a list of popular movies fetched from the TMDb API.
+2. **Generate Barcode**: Click the "Generate Barcode" button on a movie to view the barcode in a modal.
+3. **Close Modal**: Click the "Close" button in the modal to return to the movie list.
 
-## Components
+## Troubleshooting
 
-- `MovieList.vue`: Fetches and displays the list of movies. Handles the barcode generation on button click.
-- `BarcodeGenerator.vue`: Generates and displays a barcode for the given movie ID.
+If you encounter issues, ensure that:
 
-## Dependencies
+- Your API token is correctly set.
+- Dependencies are properly installed.
+- You have a compatible version of Node.js and npm.
 
-- `vue`: The Vue.js framework.
-- `axios`: Promise-based HTTP client for making API requests.
-- `jsbarcode`: Library for generating barcodes.
+For more help, refer to the [Vue.js documentation](https://vuejs.org/) or [JsBarcode documentation](https://github.com/lindell/JsBarcode).
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+Contributions are welcome! Please submit issues and pull requests to the repository.
 
-## Contact
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
 
-For any questions or feedback, please contact me at:
+## License
 
-- Email: trivenapanjaitan7.1.3@gmail.com
-- LinkedIn: [Trivena Yuli Necia Panjaitan](https://linkedin.com/in/trivena-yuli-necia-panjaitan)
-- GitHub: [trivenapanjaitan](https://github.com/trivenapanjaitan)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
+## Acknowledgements
+
+- [Vue.js](https://vuejs.org/) for the frontend framework.
+- [JsBarcode](https://github.com/lindell/JsBarcode) for barcode generation.
+- [TMDb API](https://www.themoviedb.org/documentation/api) for movie data.
+
+```
+
+Feel free to adjust any details according to your specific project setup or preferences!

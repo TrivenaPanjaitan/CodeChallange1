@@ -1,4 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import { ModalPlugin } from 'vue3-modal';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(ModalPlugin);
+app.mount('#app');
