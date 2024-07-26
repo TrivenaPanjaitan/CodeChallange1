@@ -109,5 +109,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [TMDb API](https://www.themoviedb.org/documentation/api) for movie data.
 
 ```
-
-Feel free to adjust any details according to your specific project setup or preferences!
