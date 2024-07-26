@@ -3,9 +3,6 @@
 //   transpileDependencies: true
 // })
 module.exports = {
-  // publicPath: process.env.NODE_ENV === 'production'
-  //   ? '/CodeChallange1/'
-  //   : '/'
-  publicPath: '/CodeChallange1/'
-}
+  publicPath: process.env.NODE_ENV === 'production' ? '/CodeChallange1/' : '/'
+};
 
