@@ -7,7 +7,7 @@
         <img :src="getImageUrl(movie.poster_path)" alt="Movie Poster" />
         <h3>{{ movie.title }}</h3>
         <button @click="generateBarcode(movie.id)">Generate Barcode</button>
-        <qrcode-stream v-if="selectedMovie === movie.id" @decode="onDecode"></qrcode-stream>
+        <BarcodeGenerator v-if="selectedMovie === movie.id" :value="movie.id.toString()" />
       </div>
     </div>
   </div>
@@ -15,11 +15,11 @@
 
 <script>
 import axios from 'axios';
-import { QrcodeStream } from 'vue-qrcode-reader';
+import BarcodeGenerator from './BarcodeGenerator.vue';
 
 export default {
   components: {
-    QrcodeStream,
+    BarcodeGenerator,
   },
   data() {
     return {
@@ -46,10 +46,6 @@ export default {
     },
     generateBarcode(movieId) {
       this.selectedMovie = movieId;
-    },
-    onDecode(decodedString) {
-      alert(`Scanned Ticket: ${decodedString}`);
-      this.selectedMovie = null;
     },
   },
   created() {
