@@ -2,8 +2,11 @@
 
 A Vue.js application that fetches a list of popular movies from an API and displays them in a stylish interface. Users can generate and view a barcode for each movie, which can be scanned as a ticket.
 
+https://trivenapanjaitan.github.io/CodeChallange1/
+
 ![Landing page](image.png)
 ![Generate Barcode](image-1.png)
+
 ## Features
 
 - Fetch and display a list of popular movies.
